@@ -3,8 +3,8 @@
 ### **1️⃣ Create React app**
 
 ```
-npx create-react-app react-ci-cd-demo  
-cd react-ci-cd-demo
+npx create-react-app react-devsecops-pipeline  
+cd react-devsecops-pipeline
 ```
 
 Run once locally:
@@ -111,13 +111,13 @@ git tag v0.2.1
 
 Example:
 
-https://github.com/your-org/react-ci-cd-demo
+https://github.com/your-org/react-devsecops-pipeline
 
 ---
 
 ### **2️⃣ Add remote & push**
 ```
-git remote add origin https://github.com/your-org/react-ci-cd-demo.git  
+git remote add origin https://github.com/your-org/react-devsecops-pipeline.git  
 git push -u origin main  
 git push origin --tags
 ```
@@ -242,7 +242,7 @@ git push origin cr/update-footer
 
 ## **S3 Setup (once)**
 
-* Bucket name: `react-ci-cd-demo`  
+* Bucket name: `react-devsecops-pipeline`  
 * Enable **Static Website Hosting**  
 * Disable block public access  
 * Attach bucket policy
@@ -361,7 +361,7 @@ SONAR_TOKEN
 
           args: >
 
-            -Dsonar.projectKey=your-org_react-ci-cd-demo
+            -Dsonar.projectKey=your-org_react-devsecops-pipeline
 
             -Dsonar.organization=your-org
 
@@ -517,7 +517,7 @@ Bucket policy (example):
 
     "Action": "s3:GetObject",
 
-    "Resource": "arn:aws:s3:::react-ci-cd-demo/*"
+    "Resource": "arn:aws:s3:::react-devsecops-pipeline/*"
 
   }]
 
@@ -736,7 +736,7 @@ Each PR gets:
 * Use **S3 prefix per PR**  
 * Deploy to:
 
-s3://react-ci-cd-demo/pr-<PR_NUMBER>/
+s3://react-devsecops-pipeline/pr-<PR_NUMBER>/
 
 ---
 
